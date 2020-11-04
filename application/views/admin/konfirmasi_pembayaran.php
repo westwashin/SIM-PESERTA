@@ -12,6 +12,10 @@
 
 	<div class="container-fluid my-4">
         <h3 class="text-center">Daftar Pelanggan Yang Mengirim Bukti Pembayaran</h3>
+        <div class="container">
+        <h6 class="">Hapus Semua Data</h6>
+        <a onclick='return confirm("Yakin Ingin Menghapus Semua Data? ")' href="<?= base_url('hapus/semua/peserta') ?>" class="btn btn-danger">Hapus</a>
+        </div>
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -42,6 +46,7 @@
                                 </td>
                                 <td>
                                     <a onclick='return confirm("Yakin Ingin Verfikasi No Pembayaran <?= $li->kode ?> ? ")' href="<?= base_url('admin/verifikasiPembayaran/'.$li->kode) ?>" class="btn btn-success">Verifikasi</a>
+                                    <a onclick='return confirm("Yakin Ingin Menghapus Peserta <?= $li->kode ?> ? ")' href="<?= base_url('admin/hapusPeserta/'.$li->kode) ?>" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -83,7 +88,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a onclick='return confirm("Yakin Ingin Verfikasi No Pembayaran <?= $li->kode ?> ? ")' href="<?= base_url('admin/verifikasiPembayaran/'.$li->kode) ?>" class="btn btn-success">Verifikasi</a>
+                                    <a onclick='return confirm("Yakin Ingin Menghapus Peserta <?= $li->kode ?> ? ")' href="<?= base_url('admin/hapusPeserta/'.$li->kode) ?>" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

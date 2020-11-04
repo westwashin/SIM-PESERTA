@@ -148,6 +148,11 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/dashboard/kelola-jadwal'));
 	}
 
+	public function hapusPeserta($id){
+		$this->M_Admin->hapusPeserta($id);
+		redirect(base_url('admin/KeHalamanKonfirPem'));
+	}
+
 	public function keHalamanEditJadwal($id){
 		$data['data_edit'] = $this->M_Admin->getDataEditJadwal($id)->row();
 		$data['stasiun'] = $this->M_Admin->getDataStasiun()->result();
@@ -221,7 +226,7 @@ class Admin extends CI_Controller {
         $this->email->subject('Link Zoom PKM 5 Bidang');
 
         // Isi email
-        $this->email->message("Ini adalah link untuk konfirmasi pembayaran.<br><br> Klik <strong><a href='https://localhost/isecret1/guest/keHalamanKonfirmasi' rel='noopener'>disini</a></strong> untuk konfirmasi pembayaran.");
+        $this->email->message("Selamat datang berikut merupakan kode zoom untuk kalian<br><br> Klik <strong>ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOM</strong> untuk konfirmasi pembayaran.");
 
         // Tampilkan pesan sukses atau error
         if ($this->email->send()) {
@@ -264,9 +269,9 @@ class Admin extends CI_Controller {
 	public function hapus_semua($table){
 		$truncate = $this->db->truncate($table);
 
-		if($table === 'stasiun'):
+		if($table === 'peserta'):
 
-			$redirect = 'admin/dashboard';
+			$redirect = 'admin/keHalamanKonfirPem';
 
 		elseif($table === 'jadwal'):
 
