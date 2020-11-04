@@ -56,6 +56,11 @@ class M_Admin extends CI_Model {
 		return $this->db->delete('jadwal');
 	}
 
+	public function hapusPeserta($kode){
+		$this->db->where('kode', $kode);
+		return $this->db->delete('peserta');
+	}
+
 	public function getDataEditJadwal($id){
 		$data = array(
 			'jadwal.id' => $id, 
@@ -176,11 +181,6 @@ class M_Admin extends CI_Model {
 			$insert = $this->db->insert('kursi', $data);
 		}
 		return $insert;
-	}
-
-	public function cetakLap($total_pembayaran){
-		
-
 	}
 
 }
