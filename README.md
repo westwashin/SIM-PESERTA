@@ -5,7 +5,7 @@ Merupakan website untuk melakukan penerimaan pendaftaran event, dengan menggunak
 ### Instalasi
 
 1. Buatlah sebuah database.
-2. Import  [`Global`](./Global) kedalam database anda.
+2. Import  [`.sql`](./sql) kedalam database anda.
 3. Selesai.
 
 Silahkan di kembangkan sesuai kreatifitas kalian, salam.
